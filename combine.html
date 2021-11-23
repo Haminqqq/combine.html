@@ -87,10 +87,7 @@
 	<div class="sticky-top" style="z-index:-1">
 		<video id="video1" src="https://p4css.github.io/webScroll/assets/zoomout.mp4" style="width:100vw;"></video>
 	</div>
-	<div class="row" style="height:100vh">
-		<div class="col-6"></div>
-		<div class="col-6" style="height:100vh;background-color:rgba(0,0,0,0.5);"></div>
-	</div>
+
 </div>
 
 
@@ -147,21 +144,27 @@
     </script>
 
     <script>
+
         $(document).ready(function () {
 	var video1_pos = $("#video1").offset().top;
-
+	
 	var video1_end = $("#video1").offset().top + $("#v1frame").height();
 
-	var winh = $(window).height();
-
+	console.log(video1_end);
 	$(window).scroll(function () {
-		var scroll = $(window).scrollTop(); // detect scroll current position
+		var scroll = $(window).scrollTop();
+		console.log(scroll);
+		var winh = $(window).height();
 		if(scroll > video1_pos && scroll < video1_end){
 			$("#video1")[0].play();
 		}else {
 			$("#video1")[0].pause();
 		}
-	
+		
+
+	});
+});
+
     </script>
 </body>
 
